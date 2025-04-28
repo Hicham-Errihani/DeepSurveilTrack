@@ -1,0 +1,21 @@
+# Virtual environment
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Data files
+data/raw/
+
+# Log files
+*.log
+
+# Docker volumes
+docker/*/data
