@@ -1,0 +1,8 @@
+*.sh linguist-detectable=false
+*.bat linguist-detectable=false
+*.cmd linguist-detectable=false
+*.log linguist-detectable=false
+*.tgz linguist-detectable=false
+docker/** linguist-detectable=false
+libs/** linguist-detectable=false
+notebooks/** linguist-detectable=false
