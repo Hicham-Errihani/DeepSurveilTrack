@@ -13,7 +13,7 @@
 
 <!-- 🎨 BADGES STYLÉS ET ALIGNÉS -->
 <p align="center">
-  <img src="https://img.shields.io/badge/last%20commit-today-success?style=for-the-badge&color=4caf50" alt="Last Commit">
+  <img src="https://img.shields.io/github/last-commit/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=4caf50" alt="Last Commit">
   <img src="https://img.shields.io/github/repo-size/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=2196f3" alt="Repo Size">
   <img src="https://img.shields.io/github/license/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=ff9800" alt="License">
   <img src="https://img.shields.io/github/v/release/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=9c27b0" alt="Release">
