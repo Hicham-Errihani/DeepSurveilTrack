@@ -13,10 +13,17 @@
 
 <!-- 🎨 BADGES STYLÉS ET ALIGNÉS -->
 <p align="center">
-  📅 <img src="https://img.shields.io/github/last-commit/Hicham-Errihani/DeepSurveilTrack?style=flat-square&color=28a745" alt="Dernier commit">
-  💾 <img src="https://img.shields.io/github/repo-size/Hicham-Errihani/DeepSurveilTrack?style=flat-square&color=17a2b8" alt="Taille du dépôt">
-  ⚖️ <img src="https://img.shields.io/github/license/Hicham-Errihani/DeepSurveilTrack?style=flat-square&color=6c757d" alt="Licence">
-  🚀 <img src="https://img.shields.io/github/v/release/Hicham-Errihani/DeepSurveilTrack?style=flat-square&color=f39c12" alt="Release">
+  <img src="https://img.shields.io/badge/last%20commit-today-success?style=for-the-badge&color=4caf50" alt="Last Commit">
+  <img src="https://img.shields.io/github/repo-size/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=2196f3" alt="Repo Size">
+  <img src="https://img.shields.io/github/license/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=ff9800" alt="License">
+  <img src="https://img.shields.io/github/v/release/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=9c27b0" alt="Release">
+  <img src="https://img.shields.io/github/languages/top/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=00bcd4" alt="Main Language">
+  <img src="https://img.shields.io/github/commit-activity/m/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=00bcd4" alt="Commit Activity">
+  <img src="https://img.shields.io/github/contributors/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=2196f3" alt="Contributors">
+  <img src="https://img.shields.io/github/languages/count/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=9c27b0" alt="Languages Count">
+  <img src="https://img.shields.io/github/release-date/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=ff5722" alt="Release Date">
+  <img src="https://img.shields.io/github/stars/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=fbc02d" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/forks/Hicham-Errihani/DeepSurveilTrack?style=for-the-badge&color=03a9f4" alt="GitHub Forks">
 </p>
 
 ---
