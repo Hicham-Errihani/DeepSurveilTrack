@@ -73,20 +73,33 @@ Le projet **DeepSurveilTrack** vise à concevoir un pipeline de vidéosurveillan
 
 ```text
 DeepSurveilTrack/
-├── configs/                  # 🔧 Fichiers de configuration globaux
-├── data/                     # 📂 Données brutes : images, logs, etc.
-├── docker/                   # 🐳 Environnement Docker
-│   └── kafka/                # └─📦 Kafka + docker-compose.yml
-├── docs/                     # 📝 Documentation, visuels, bannières
-├── env/                      # 🐍 Environnement Python virtuel
-├── models/                   # 🤖 Modèles IA sauvegardés ou préchargés
-├── notebooks/                # 📓 Notebooks Jupyter d'exploration
-├── scripts/                  # 🛠️ Scripts utilitaires (nettoyage, test…)
-├── src/                      # 💻 Code source principal
-│   ├── producer/             # └─📤 Envoi de frames (Kafka Producer)
-│   └── consumer/             # └─⚙️ Traitement Spark (Consumer)
-├── tests/                    # ✅ Tests unitaires / fonctionnels
-├── run_all.sh                # 🚀 Script global d’exécution du pipeline
-├── requirements.txt          # 📦 Liste des dépendances Python
-└── README.md                 # 🧾 Documentation principale du projet
+├── docker/ # 📦 Environnement Docker
+│ └── kafka/ # 🧩 Kafka + docker-compose.yml
+├── docs/ # 📚 Documentation, visuels, bannières
+├── frames_to_send/ # 🖼️ Images à envoyer via Kafka
+├── received_frames/ # 📥 Images reçues après traitement
+├── src/ # 💻 Code source principal
+│ ├── producer/ # 📤 Envoi de frames (Kafka Producer)
+│ └── consumer/ # ⚙️ Traitement Spark (Consumer)
+├── venv/ # 🐍 Environnement Python virtuel
+├── kafka_2.12-3.2.0.tgz # 📦 Archive Kafka téléchargée
+├── main # 🚀 Fichier principal ou point d'entrée
+├── pipeline.sh # 🔁 Script global de pipeline
+├── start_kafka.sh # ▶️ Démarrage Kafka
+├── stop-kafka.sh # ⏹️ Arrêt Kafka (ancienne syntaxe)
+├── stop_kafka.sh # ⏹️ Arrêt Kafka (nouvelle syntaxe ?)
+├── run_all.sh # ⚙️ Script de démarrage complet
+├── requirements.txt # 📦 Dépendances Python
+└── README.md # 📘 Documentation du projet
+
+
+
+
+
+
+
+
+
+
+
 
