@@ -5,7 +5,8 @@ import json
 from kafka import KafkaProducer
 
 # 📁 Dossier contenant les images à envoyer
-image_dir = "data/frames_to_send"
+image_dir = "frames_to_send"
+
 
 # 🛠 Initialiser le producteur Kafka
 producer = KafkaProducer(

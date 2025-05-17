@@ -5,7 +5,7 @@ from kafka import KafkaProducer
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
-image_dir = 'data/frames_to_send'
+image_dir = image_dir = "frames_to_send"
 images = sorted(os.listdir(image_dir))
 
 while True:
