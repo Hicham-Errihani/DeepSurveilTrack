@@ -11,3 +11,5 @@ outputs/
 tmp/
 spark-checkpoints/
 .streamlit/
+venv/
+.venv/
