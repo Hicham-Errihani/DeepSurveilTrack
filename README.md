@@ -34,25 +34,28 @@ Traditional video surveillance systems are passive and rely on human monitoring.
 
 ## 📂 Repository Structure
 
-\`\`\`
+```bash
 DeepSurveilTrack/
-├─ src/
-│  ├─ producer/producer.py       # Kafka producer (sends video frames)
-│  ├─ consumer/spark_consumer.py # Spark consumer (CNN+LSTM scoring, ES indexing)
+├── src/                        # Source code
+│   ├── producer/
+│   │   └── producer.py         # Kafka Producer – streams video frames
+│   ├── consumer/
+│   │   └── spark_consumer.py   # Spark Consumer – CNN+LSTM scoring, ES indexing
 │
-├─ models/
-│  ├─ cnn_model.py               # CNN (MobileNetV2-based feature extractor)
+├── models/
+│   └── cnn_model.py            # CNN (MobileNetV2-based feature extractor)
 │
-├─ docs/
-│  ├─ elasticsearch_mapping.json # ES index mapping
+├── docs/
+│   └── elasticsearch_mapping.json # Elasticsearch index mapping
 │
-├─ dashboard.py                   # Streamlit monitoring UI
-├─ docker-compose.yml             # Infrastructure: Kafka, Zookeeper, ES, Kibana, Spark
-├─ scripts/run_all.sh             # Launches the entire pipeline
-├─ requirements.txt
-├─ .gitignore
-└─ README.md
-\`\`\`
+├── dashboard.py                 # Streamlit monitoring dashboard
+├── docker-compose.yml           # Infra: Kafka, Zookeeper, Spark, ES, Kibana
+├── scripts/
+│   └── run_all.sh               # Script to launch the entire pipeline
+│
+├── requirements.txt             # Python dependencies
+├── .gitignore                   # Ignore rules (venv, cache, logs, etc.)
+└── README.md                    # Project documentation
 
 ---
 
