@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "properties": {
+      "timestamp": { "type": "date" },
+      "type": { "type": "keyword" },
+      "severity": { "type": "keyword" },
+      "score": { "type": "float" },
+      "source": { "type": "keyword" },
+      "note": { "type": "text" }
+    }
+  }
+}

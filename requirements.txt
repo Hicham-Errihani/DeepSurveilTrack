@@ -1,0 +1,8 @@
+kafka-python==2.0.2
+pyspark==3.5.0
+elasticsearch==8.9.0
+opencv-python==4.8.1.78
+numpy==1.26.4
+pandas==2.1.1
+streamlit==1.46.0
+requests==2.31.0

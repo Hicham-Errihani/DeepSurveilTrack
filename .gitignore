@@ -1,8 +1,13 @@
-venv/
 __pycache__/
-.ipynb_checkpoints/
 *.pyc
+.venv/
+.env
 .DS_Store
-ENV/
-env/
-*.egg-info/
+.vscode/
+.idea/
+data/
+outputs/
+*.mp4 *.avi *.mov
+tmp/
+spark-checkpoints/
+.streamlit/

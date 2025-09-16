@@ -1,44 +1,21 @@
-# dashboard_list.py
-
-import streamlit as st
-import pandas as pd
-from datetime import datetime
-
-st.set_page_config(
-    page_title="DeepSurveilTrack – Liste des événements",
-    layout="wide"
-)
-
-st.title("📋 DeepSurveilTrack – Liste des événements")
-
-# 1) Choix du mode de chargement
-use_csv = st.checkbox("Charger un CSV local", value=False)
-if use_csv:
-    uploaded = st.file_uploader("👉 Déposez votre fichier CSV ici", type="csv")
-    if uploaded is None:
-        st.info("Aucun CSV chargé, attendez ou décochez l'option.")
-        st.stop()
-    df = pd.read_csv(uploaded, parse_dates=["timestamp"])
-else:
-    # Génère quelques événements factices
-    dates = pd.date_range(datetime.today(), periods=5, freq="T")
-    df = pd.DataFrame({
-        "timestamp": dates,
-        "type":      ["Mouvement rapide détecté"] * len(dates),
-        "camera":    [f"CAM_{i+1:02d}" for i in range(len(dates))],
-        "score":     [round(50+50*i/len(dates),1) for i in range(len(dates))]
-    })
-
-# 2) Affiche la liste
-st.subheader(f"{len(df)} événements chargés")
+import os, requests, pandas as pd, streamlit as st
+ES = os.getenv("ES_URL", "http://localhost:9200")
+INDEX = os.getenv("ES_INDEX", "events")
+st.set_page_config(page_title="DeepSurveilTrack", layout="wide")
+st.title("DeepSurveilTrack – Monitoring")
+sev = st.selectbox("Severity", ["all","low","medium","high","critical"])
+limit = st.number_input("Limit", 10, 5000, 1000, 50)
+def fetch():
+    must = []
+    if sev != "all": must.append({"term":{"severity":sev}})
+    q = {"bool":{"must":must}} if must else {"match_all":{}}
+    body = {"query":q, "size":int(limit), "sort":[{"timestamp":"desc"}]}
+    r = requests.get(f"{ES}/{INDEX}/_search", json=body); r.raise_for_status()
+    return pd.DataFrame([h["_source"] for h in r.json()["hits"]["hits"]])
+df = fetch()
 st.dataframe(df, use_container_width=True)
-
-# 3) Optionnel : afficher chaque événement en détail avec un expander
-for idx, row in df.iterrows():
-    with st.expander(f"Événement #{idx+1} – {row['timestamp']}"):
-        st.write({
-            "Horodatage": row["timestamp"],
-            "Type": row["type"],
-            "Caméra": row["camera"],
-            "Score": f"{row['score']} %"
-        })
+if not df.empty:
+    st.subheader("Stats")
+    st.bar_chart(df["severity"].value_counts())
+    st.line_chart(df.sort_values("timestamp")["score"])
+    st.download_button("Export CSV", df.to_csv(index=False), "events.csv", "text/csv")
