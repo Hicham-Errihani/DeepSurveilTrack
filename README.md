@@ -1,130 +1,62 @@
-## 🚀 Introduction
-
-**DeepSurveilTrack** est un prototype de surveillance vidéo en temps réel utilisant des technologies modernes telles que Kafka, PySpark (CNN+LSTM), et Elasticsearch. Ce système intelligent permet de traiter des flux vidéo en continu, d'analyser des événements en temps réel et d'afficher les résultats via une interface Streamlit. Le projet est conçu pour la surveillance en temps réel avec un traitement rapide des données et une intégration complète de l'IA pour l'analyse vidéo.
-
-- 📡 Kafka gère le flux de vidéos en temps réel.
-- 🔥 PySpark avec LSTM analyse les vidéos et génère des prédictions.
-- 🔎 Elasticsearch est utilisé pour l'indexation des résultats et leur stockage.
-- 📊 Streamlit fournit une interface de monitoring en temps réel.
-## ⚙️ Installation
-
-### Prérequis
-
-- Python 3.x
-- Docker & Docker Compose
-- Kafka
-- Elasticsearch
-
-### Étapes d'installation
-
-1. Clonez ce repository :
-   ```bash
-   git clone https://github.com/Hicham-Errihani/DeepSurveilTrack.git
-   cd DeepSurveilTrack
-
-
 # DeepSurveilTrack
 
-🚀 **DeepSurveilTrack** is an **intelligent real-time video surveillance platform** built using a modern big data & AI stack.  
-It demonstrates how to combine **Kafka, Spark Streaming, Deep Learning (CNN/LSTM), Elasticsearch, and Streamlit** into a scalable end-to-end pipeline.
+DeepSurveilTrack is an intelligent video surveillance system designed for real-time behavioral analysis and incident detection. Built using cutting-edge technologies like Kafka, PySpark, Elasticsearch, and Deep Learning models, the system provides real-time alerts and insights into video data.
 
-> 🎓 Academic Project – ENSA Berrechid, Hassan 1st University  
-> 👨‍💻 Author: **Hicham Errihani** | 2025
+## Table of Contents
 
----
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Installation Instructions](#installation-instructions)
+4. [Usage](#usage)
+5. [Configuration](#configuration)
+6. [Testing](#testing)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Acknowledgments](#acknowledgments)
 
-## 🌐 Project Overview
+## Project Overview
 
-Traditional video surveillance systems are passive and rely on human monitoring.  
-**DeepSurveilTrack** brings automation and intelligence by:
+DeepSurveilTrack is designed for real-time surveillance in smart cities, providing analysis on behavior, incidents, and threats. The system leverages multiple deep learning models, including Convolutional Neural Networks (CNN) for face recognition and Long Short-Term Memory (LSTM) networks for behavioral analysis.
 
-- Detecting **faces** and **abnormal behaviors** in real time.  
-- Streaming video frames via **Apache Kafka**.  
-- Processing them with **PySpark Streaming + Deep Learning models (CNN & LSTM)**.  
-- Indexing events into **Elasticsearch**.  
-- Displaying results in an interactive **Streamlit dashboard**.  
+The system is built to scale and support distributed environments, leveraging technologies like **Apache Kafka** for real-time streaming, **Elasticsearch** for indexing and searching, and **Streamlit** for interactive visualization.
 
----
+## Technologies Used
 
-## 🛠️ Tech Stack
+- **Kafka**: Messaging system for real-time data processing
+- **PySpark**: Distributed data processing framework
+- **Elasticsearch**: Search engine for data indexing
+- **Deep Learning**: CNN (for face recognition), LSTM (for behavioral analysis)
+- **Streamlit**: Framework for building interactive dashboards
+- **Docker**: Containerization for deployment
 
-- **Programming**: Python 3.10, TensorFlow/Keras, OpenCV  
-- **Streaming & Processing**: Apache Kafka 3.6, Apache Spark 3.5  
-- **Datastore & Search**: Elasticsearch 8.x  
-- **Visualization**: Streamlit 1.46, Kibana  
-- **Infrastructure**: Docker, Docker Compose  
-- **Version Control**: GitHub (SSH workflow)  
+## Installation Instructions
 
----
+To set up DeepSurveilTrack on your local machine or server, follow these steps:
 
-## 📂 Repository Structure
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/DeepSurveilTrack.git
+    cd DeepSurveilTrack
+    ```
 
+2. Create a virtual environment (if you haven't already):
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Set up Docker (if using Docker for deployment):
+    ```bash
+    docker-compose up
+    ```
+
+## Usage
+
+Once the setup is complete, you can start the Streamlit app by running the following command:
 ```bash
-DeepSurveilTrack/
-├── src/                        # Source code
-│   ├── producer/
-│   │   └── producer.py         # Kafka Producer – streams video frames
-│   ├── consumer/
-│   │   └── spark_consumer.py   # Spark Consumer – CNN+LSTM scoring, ES indexing
-│
-├── models/
-│   └── cnn_model.py            # CNN (MobileNetV2-based feature extractor)
-│
-├── docs/
-│   └── elasticsearch_mapping.json # Elasticsearch index mapping
-│
-├── dashboard.py                 # Streamlit monitoring dashboard
-├── docker-compose.yml           # Infra: Kafka, Zookeeper, Spark, ES, Kibana
-├── scripts/
-│   └── run_all.sh               # Script to launch the entire pipeline
-│
-├── requirements.txt             # Python dependencies
-├── .gitignore                   # Ignore rules (venv, cache, logs, etc.)
-└── README.md                    # Project documentation
-
----
-
-## 🚀 Quickstart
-
-\`\`\`bash
-# start infrastructure
-docker compose up -d
-
-# send frames
-export DST_VIDEO=./sample.mp4
-python src/producer/producer.py
-
-# stream processing -> ES
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.5 src/consumer/spark_consumer.py
-
-# dashboard
-streamlit run dashboard.py
-\`\`\`
-
----
-
-## 📊 Features
-
-- ✅ Real-time video ingestion via **Kafka**  
-- ✅ Parallel processing with **Spark Structured Streaming**  
-- ✅ AI-based detection:
-  - **CNN** (MobileNetV2) for face detection
-  - **LSTM** for abnormal behavior scoring  
-- ✅ Events indexed in **Elasticsearch**  
-- ✅ **Interactive dashboard** (filters, charts, export)  
-- ✅ **Scalable architecture** with Docker  
-
----
-
-## 🔮 Future Improvements
-
-- Replace CNN/LSTM with **Transformers**  
-- Connect to **live cameras (RTSP/ONVIF)**  
-- Add a **mobile app + incident map**  
-- Kubernetes deployment with Helm  
-
----
-
-## 📜 License
-
-[MIT License](LICENSE) © 2025 Hicham Errihani
+streamlit run dashboard_attractif.py
