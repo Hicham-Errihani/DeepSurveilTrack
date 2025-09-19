@@ -54,9 +54,10 @@ To set up DeepSurveilTrack on your local machine or server, follow these steps:
     ```bash
     docker-compose up
     ```
+### Configuration
+To configure the application, set the following environment variable:
 
-## Usage
-
-Once the setup is complete, you can start the Streamlit app by running the following command:
-```bash
-streamlit run dashboard_attractif.py
+- `FLASK_CONFIG`: Choose the configuration class:
+  - `DevelopmentConfig` (default)
+  - `TestingConfig`
+  - `ProductionConfig`
