@@ -1,3 +1,28 @@
+## 🚀 Introduction
+
+**DeepSurveilTrack** est un prototype de surveillance vidéo en temps réel utilisant des technologies modernes telles que Kafka, PySpark (CNN+LSTM), et Elasticsearch. Ce système intelligent permet de traiter des flux vidéo en continu, d'analyser des événements en temps réel et d'afficher les résultats via une interface Streamlit. Le projet est conçu pour la surveillance en temps réel avec un traitement rapide des données et une intégration complète de l'IA pour l'analyse vidéo.
+
+- 📡 Kafka gère le flux de vidéos en temps réel.
+- 🔥 PySpark avec LSTM analyse les vidéos et génère des prédictions.
+- 🔎 Elasticsearch est utilisé pour l'indexation des résultats et leur stockage.
+- 📊 Streamlit fournit une interface de monitoring en temps réel.
+## ⚙️ Installation
+
+### Prérequis
+
+- Python 3.x
+- Docker & Docker Compose
+- Kafka
+- Elasticsearch
+
+### Étapes d'installation
+
+1. Clonez ce repository :
+   ```bash
+   git clone https://github.com/Hicham-Errihani/DeepSurveilTrack.git
+   cd DeepSurveilTrack
+
+
 # DeepSurveilTrack
 
 🚀 **DeepSurveilTrack** is an **intelligent real-time video surveillance platform** built using a modern big data & AI stack.  
